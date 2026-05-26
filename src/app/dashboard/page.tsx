@@ -23,7 +23,7 @@ export default function DashboardPage() {
         </div>
 
         <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="grid grid-cols-5 w-full">
+          <TabsList className="flex w-full overflow-x-auto">
             <TabsTrigger value="overview">Resumen</TabsTrigger>
             <TabsTrigger value="projects">Proyectos</TabsTrigger>
             <TabsTrigger value="team">Equipo</TabsTrigger>
