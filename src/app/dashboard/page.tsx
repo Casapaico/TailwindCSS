@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ProjectForm } from "@/components/ProjectForm"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
@@ -17,6 +18,11 @@ export default function DashboardPage() {
           </h1>
           <p className="text-slate-600">
             Gestiona tus proyectos y tareas con shadcn/ui
+          </p>
+          <div className="pt-4">
+            <ProjectForm />
+          </div>
+          <p className="hidden">
           </p>
         </div>
 
