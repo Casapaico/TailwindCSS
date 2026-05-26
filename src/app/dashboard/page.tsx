@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ProjectForm } from "@/components/ProjectForm"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+// agregado para TasksTable
+import { TasksTable } from "@/components/TasksTable"
 
 export default function DashboardPage() {
   return (
@@ -33,6 +35,8 @@ export default function DashboardPage() {
             <TabsTrigger value="projects">Proyectos</TabsTrigger>
             <TabsTrigger value="team">Equipo</TabsTrigger>
             <TabsTrigger value="settings">Configuración</TabsTrigger>
+            
+            <TabsTrigger value="tasks">Tareas</TabsTrigger>
           </TabsList>
 
           {/* Tab: Overview */}
@@ -238,6 +242,24 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">Configuración en desarrollo...</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+
+
+
+          {/* Tab: Tasks */}
+          <TabsContent value="tasks" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Gestión de Tareas</CardTitle>
+                <CardDescription>
+                  Administra todas las tareas de tus proyectos
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <TasksTable />
               </CardContent>
             </Card>
           </TabsContent>
