@@ -1,18 +1,18 @@
 "use client"
 
+import dynamic from "next/dynamic"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { OverviewTab }  from "@/components/overview/OverviewTab"
-import { ProjectsTab }  from "@/components/projects/ProjectsTab"
-import { TeamTab }      from "@/components/team/TeamTab"
-import { TasksTab }     from "@/components/tasks/TasksTab"
-import { SettingsTab }  from "@/components/settings/SettingsTab"
+
+const OverviewTab  = dynamic(() => import("@/components/overview/OverviewTab").then(m => ({ default: m.OverviewTab })),  { ssr: false })
+const ProjectsTab  = dynamic(() => import("@/components/projects/ProjectsTab").then(m => ({ default: m.ProjectsTab })), { ssr: false })
+const TeamTab      = dynamic(() => import("@/components/team/TeamTab").then(m => ({ default: m.TeamTab })),              { ssr: false })
+const TasksTab     = dynamic(() => import("@/components/tasks/TasksTab").then(m => ({ default: m.TasksTab })),           { ssr: false })
+const SettingsTab  = dynamic(() => import("@/components/settings/SettingsTab").then(m => ({ default: m.SettingsTab })), { ssr: false })
 
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-slate-100 p-8">
       <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-slate-900 mb-2">
             Dashboard de Proyectos
@@ -37,7 +37,6 @@ export default function DashboardPage() {
           <TabsContent value="tasks">     <TasksTab />     </TabsContent>
           <TabsContent value="settings">  <SettingsTab />  </TabsContent>
         </Tabs>
-
       </div>
     </div>
   )
