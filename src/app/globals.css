@@ -80,13 +80,4 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Glassmorphism v2 */
-[data-radix-popper-content-wrapper] > *,
-[role="dialog"] > *,
-[data-radix-dialog-content] {
-  background-color: rgba(255, 255, 255, 0.75) !important;
-  backdrop-filter: blur(16px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
-}
+
